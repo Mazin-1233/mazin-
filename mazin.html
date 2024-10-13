@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Survey</title>
+    <style>
+        body {
+            font-family: 'Lucida Handwriting', 'Cursive', sans-serif; /* Cursive font */
+            background-color: #FF7F7F; /* Light cyan background */
+            color: #2f413e;
+            font-size: 18px; /* Larger base font size */
+        }
+        .container {
+            width: 80%;
+            max-width: 800px; /* Max width for better layout on larger screens */
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px; /* More padding for a spacious feel */
+            border: 2px solid #009688; /* Teal border */
+            border-radius: 15px; /* More rounded corners */
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #f73820; /* Dark teal */
+            font-size: 2em; /* Larger heading */
+            margin-bottom: 20px; /* Space below the heading */
+        }
+        p {
+            color: #555; 
+            margin-bottom: 20px; 
+        }
+        .question {
+            margin-bottom: 25px;
+            background-color: #f73810; 
+            padding: 15px;
+            border: 1px solid #EAD2AC;
+            border-radius: 10px; 
+        }
+        .question label {
+            display: block;
+            margin-bottom: 12px; 
+            color: #2f413e;
+            font-size: 1.1em;
+        }
+        .question input[type="radio"] {
+            margin-right: 10px;
+            cursor: pointer; 
+        }
+        .question input[type="text"],
+        .question input[type="email"],
+        .question textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 12px; 
+            border: 1px solid #a5d6a7; 
+            border-radius: 5px;
+            font-size: 1em; 
+        }
+        .question textarea {
+            height: 120px;
+        }
+        .submit {
+            background-color: #f73820; 
+            color: #fff;
+            padding: 15px 30px; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em; 
+            transition: background-color 0.3s, transform 0.2s; 
+        }
+        .submit:hover {
+            background-color: #2e7d42; 
+            transform: scale(1.05); 
+        }
+</style>
+ 
+</head>
+<body>
+    <div class="container">
+        <h2>Project Survey</h2>
+        <p>We value your feedback and would like to hear about your experience with our project. Please take a few minutes to complete this survey.</p>
+        <form id="surveyForm">
+            <div class="question">
+                <label for="name">What is your name?</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="question">
+                <label for="email">What is your email address?</label>
+                <input type="email" id="email" placeholder="example@domain.com" required>
+            </div>
+            <div class="question">
+                <label>What is your overall satisfaction with the project?</label>
+                <input type="radio" name="satisfaction" value="Very Satisfied"> Very Satisfied
+                <input type="radio" name="satisfaction" value="Satisfied"> Satisfied
+                <input type="radio" name="satisfaction" value="Neutral"> Neutral
+                <input type="radio" name="satisfaction" value="Dissatisfied"> Dissatisfied
+                <input type="radio" name="satisfaction" value="Very Dissatisfied"> Very Dissatisfied
+            </div>
+            <div class="question">
+                <label>How likely are you to recommend our project to others?</label>
+                <input type="radio" name="recommend" value="Very Likely"> Very Likely
+                <input type="radio" name="recommend" value="Likely"> Likely
+                <input type="radio" name="recommend" value="Neutral"> Neutral
+                <input type="radio" name="recommend" value="Unlikely"> Unlikely
+                <input type="radio" name="recommend" value="Very Unlikely"> Very Unlikely
+            </div>
+            <div class="question">
+                <label>What did you like most about the project?</label>
+                <textarea id="likeMost"></textarea>
+            </div>
+            <div class="question">
+                <label>What did you like least about the project?</label>
+                <textarea id="likeLeast"></textarea>
+            </div>
+            <div class="question">
+                <label>Do you have any suggestions for improving the project?</label>
+                <textarea id="suggestions"></textarea>
+            </div>
+            <div class="question">
+                <label>How did you hear about our project?</label>
+                <input type="text" id="heardFrom">
+            </div>
+            <div class="question">
+                <label>What features or functionalities would you like to see added to the project in the future?</label>
+                <textarea id="futureFeatures"></textarea>
+            </div>
+            <div class="question">
+                <label>Have you encountered any issues or bugs while using the project? If so, please describe:</label>
+                <textarea id="issues"></textarea>
+            </div>
+            <div class="question">
+                <label>How would you rate the project's performance?</label>
+                <input type="radio" name="performance" value="1"> 1 (Poor)
+                <input type="radio" name="performance" value="2"> 2 (Fair)
+                <input type="radio" name="performance" value="3"> 3 (Good)
+                <input type="radio" name="performance" value="4"> 4 (Very Good)
+                <input type="radio" name="performance" value="5"> 5 (Excellent)
+            </div>
+            <div class="question">
+                <label>How would you rate the project's user interface?</label>
+                <input type="radio" name="user_interface" value="1"> 1 (Poor)
+                <input type="radio" name="user_interface" value="2"> 2 (Fair)
+                <input type="radio" name="user_interface" value="3"> 3 (Good)
+                <input type="radio" name="user_interface" value="4"> 4 (Very Good)
+                <input type="radio" name="user_interface" value="5"> 5 (Excellent)
+            </div>
+            <div class="question">
+                <label>How would you rate the project's overall value?</label>
+                <input type="radio" name="value" value="1"> 1 (Poor)
+                <input type="radio" name="value" value="2"> 2 (Fair)
+                <input type="radio" name="value" value="3"> 3 (Good)
+                <input type="radio" name="value" value="4"> 4 (Very Good)
+                <input type="radio" name="value" value="5"> 5 (Excellent)
+            </div>
+            <div class="question">
+                <label>Do you have any additional comments or feedback about the project?</label>
+                <textarea id="additionalComments"></textarea>
+            </div>
+            <button type="submit" class="submit">Submit</button>
+            <p>#by:Mazin Ala</p>
+            <p><center>@Mr.ABDELRAHMAN ABUTOUQ</center></p>
+        </form>
+    </div>
+    <script type="text/javascript">
+        document.getElementById('surveyForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name').value, // Collect the name
+                email: document.getElementById('email').value, // Collect the email address
+                satisfaction: document.querySelector('input[name="satisfaction"]:checked')?.value || 'Not Answered',
+                recommend: document.querySelector('input[name="recommend"]:checked')?.value || 'Not Answered',
+                likeMost: document.getElementById('likeMost').value,
+                likeLeast: document.getElementById('likeLeast').value,
+                suggestions: document.getElementById('suggestions').value,
+                heardFrom: document.getElementById('heardFrom').value,
+                futureFeatures: document.getElementById('futureFeatures').value,
+                issues: document.getElementById('issues').value,
+                performance: document.querySelector('input[name="performance"]:checked')?.value || 'Not Answered',
+                user_interface: document.querySelector('input[name="user_interface"]:checked')?.value || 'Not Answered',
+                value: document.querySelector('input[name="value"]:checked')?.value || 'Not Answered',
+                additionalComments: document.getElementById('additionalComments').value,
+            };
+
+            // Send the form data using EmailJS
+            emailjs.send("service_m7ljpj5", "template_0m8auyu", formData)
+                .then(function(response) {
+                    alert('Thank you for your feedback! Your response has been sent.');
+                    document.getElementById('surveyForm').reset(); // Reset the form after submission
+                }, function(error) {
+                    alert('There was an error sending your feedback. Please try again.');
+                    console.error('Failed to send feedback:', error);
+                });
+        });
+    </script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("97NdiLGbMf6i1v4pY");
+        })();
+    </script>
+</body>
+</html>
